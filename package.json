@@ -2,14 +2,15 @@
   "name": "my-finance",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "cover": "npm run test --coverage",
     "test": "NODE_ENV=testing jest --runInBand --forceExit --detectOpenHandles --passWithNoTests",
+    "test-file":"jest --testPathPattern=./test/register.test.js",
     "eslint-check": "eslint --print-config .eslintrc.js --ignore-pattern ./.eslintrc.js | eslint-config-prettier-check",
     "lint": "eslint \"**/*.js\" --ignore-pattern ./.eslintrc.js",
-    "start:dev": "nodemon app.js",
-    "start": "node app.js"
+    "start:dev": "nodemon server.js",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +24,7 @@
     "joi": "^17.9.1",
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^7.0.2",
+    "supertest": "^6.3.3",
     "swagger-ui-express": "^4.6.2"
   },
   "devDependencies": {
